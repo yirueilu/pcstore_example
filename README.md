@@ -4,5 +4,6 @@
 
 # Usage
 
-### Change the `crawler.raw_text` in `main.py` to any text that you want to search and run `main.py`, then it would print out the corresponding titles.
+### Run `main.py` then type keyword for searching then the scripts world print out the corresponding titles.
 
+### Input exit to terminate process.
