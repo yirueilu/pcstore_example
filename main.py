@@ -1,14 +1,14 @@
-# from argparse import ArgumentParser
 from get_data import PcstoreCrawler
+import sys
 
 if __name__ == '__main__':
-    # parser = ArgumentParser()
-    # parser.add_argument("search")
-    # args = parser.parse_args()
-    # crawler.raw_text = args.search
     crawler = PcstoreCrawler()
-    crawler.raw_text = "搜尋關鍵字"
-    print("正在搜尋", crawler.raw_text, "......")
-    titles = crawler.get_title()
-    for title in titles:
-        print(title)
+    while True:
+        crawler.raw_text = input("請輸入關鍵字 ( 輸入exit結束 )：")
+        if crawler.raw_text == "exit":
+            break
+        print("正在搜尋", crawler.raw_text, "......")
+        titles = crawler.get_title()
+        for title in titles:
+            print(title.encode(sys.stdin.encoding, "ignore").decode(sys.stdin.encoding), "\n")
+
